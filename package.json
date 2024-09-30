@@ -1,0 +1,22 @@
+{
+  "name": "training-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@vee-validate/nuxt": "^4.13.2",
+    "nuxt": "^3.13.0",
+    "vue": "latest",
+    "vue-router": "latest",
+    "yup": "^1.4.0"
+  },
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^6.12.1"
+  }
+}
