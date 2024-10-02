@@ -1,6 +1,6 @@
 <template>
 
-<svg fill="#000000" width="20px" height="20px" viewBox="0 0 512 512" id="Layer_1" enable-background="new 0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+<svg class="internet" width="20px" height="20px" viewBox="0 0 512 512" id="Layer_1" enable-background="new 0 0 512 512" xmlns="http://www.w3.org/2000/svg">
 
 <g>
 
@@ -10,3 +10,8 @@
 
 </svg>
 </template>
+<style scope>
+.internet path:hover{
+    fill: blueviolet;
+}
+</style>

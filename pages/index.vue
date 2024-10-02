@@ -48,9 +48,10 @@ import moon from "../components/assets/icons/moon.vue"
 import sun from "../components/assets/icons/sun.vue"
 import cancel from "../components/assets/icons/cancel.vue"
 import threearow from "../components/assets/icons/threearow.vue"
+import { useRouter } from 'vue-router';
 const smallscreens = ref(false);
 const currentComponent=ref('window')
-
+const router=useRouter()
 const mousehover = ref(null);
 const handleMousehover = (id) => {
   mousehover.value = id;
@@ -84,7 +85,7 @@ const sunClicked=()=>{
 const navbarColor=computed(()=>{
    switch(currentComponent.value){
     case 'window':
-      return "bg-slate-200"
+      return "bg-gray-400"
       case "sun":
         return "bg-black"
         default:
@@ -92,27 +93,37 @@ const navbarColor=computed(()=>{
    }
 
 })
+const gotoHome=()=>{
+router.push("#home")
+}
   </script>
             <style >
 #map {
   height: 100%;
   width: 100%;
 }
+
+.giz{
+  filter: brightness(0.9) saturate(0) contrast(1.2) sepia(0.3);
+
+}
+/* #6b7280 */
+
 html {
     scroll-behavior: smooth;
 }</style>
             <template>
              <div class="flex flex-col w-full mt-0 overflow-x-hidden min-h-screen"> 
           <header>
-   <nav   :class="[ navbarColor, 'w-full py-4 items-center fixed top-0 border-b-2 border-gray-400 z-50']">
-    <div class="container mx-auto flex flex-row justify-between items-center px-2 md:px-12">
+        <nav   :class="[ navbarColor, 'w-full py-7 items-center fixed top-0 border-b-2 border-gray-400 z-50']">
+        <div class="container mx-auto flex flex-row justify-between items-center px-2 ">
       
-      <div class="flex-shrink-0 cursor-pointer" @click="gotoHome">
+       <div class="flex-shrink-0 cursor-pointer" @click="gotoHome">
         <img :src="minablogos" alt="Logo" class="w-24 h-8 object-fill">
-      </div>
+       </div>
 
-      <div  class="hidden md:flex flex-row gap-10 text-lg items-center text-violet-500">
-        <a 
+       <div  class="hidden md:flex flex-row gap-10 text-lg items-center text-violet-500">
+         <a 
             v-for="link in links" 
             :key="link" 
             :href="`#${link}`" 
@@ -157,7 +168,7 @@ html {
   </nav>
 </header>
                   <main class="flex-grow"> 
-                    <section id="home" class="bg-[url('https://res.cloudinary.com/dtlezwrzm/image/upload/v1661000843/minab_back_weuxkp.png')]  flex flex-col  w-full bg-gray-400  h-[60rem] gap-4 md:gap-8 object-contain bg-cover relative">
+                    <section id="home" class="bg-[url('https://res.cloudinary.com/dtlezwrzm/image/upload/v1661000843/minab_back_weuxkp.png')]  flex flex-col  w-full bg-gray-400  h-[60rem] gap-4 md:gap-8 object-contain bg-cover relative pt-10">
                          <div class="flex sm:justify-start md:justify-center w-full   md:items-center mt-44">
                         <img :src="minablogos" alt="there is no logos in this feild" class="w-[40-rem] object-cover">
                         </div>
@@ -166,24 +177,24 @@ html {
                          <h2 class="font-bold text-2xl md:text-6xl w-[20rem] md:w-[50rem] ml-10 md:ml-20">We have all the <span class="bg-white text-violet-500 p-2">answers.</span></h2>
                            </div>
                            <div class="text-center mt-10">
-                            <button class="text-center bg-purple-700 text-white px-2 py-2 items-center w-36 rounded-lg">Let's discuss</button>
+                            <button class="text-center bg-purple-700 text-white px-2 py-3 items-center w-44 rounded-lg">Let's discuss</button>
                           </div>
                  
                  </section>
 
                  <!-- about -->
-       <section id="about" class="mt-0 flex flex-col md:flex-row w-full h-auto md:h-[50rem] justify-between items-center bg-slate-200 md:pt-10 pt-20">
-    <div class="flex flex-col gap-6 md:gap-11 px-6 md:px-28 md:text-center">
-      <h1 class="font-semibold text-3xl md:text-4xl">About</h1>
-      <p class="text-base md:text-xl w-full md:w-[45rem] text-slate-500">
-        Founded in 2014 by three college friends in Addis Ababa, Minab IT Solutions Plc is a technology solutions provider with teams in Addis Ababa, Hawassa, Mekelle, Adama, Diredawa, Debre Birhan, Bahir Dar, Bulbula, Bure, Yirgalem, and Kombolcha. Minab is a technology consulting and cloud platforms development firm that has worked on several governments and international development organization projects in Ethiopia, Nigeria, Mali, Morocco, Ghana, etc. Our implementation sector includes job matching services, data analysis and reporting tools, enterprise process automation, and property management solutions. We have earned an excellent reputation with our clients by delivering outstanding results.
+       <section id="about" class="mt-0 min-h-screen flex flex-col md:flex-row w-full h-auto md:h-[50rem] justify-between bg-[#e5e5e5] md:pt-32 pt-20">
+    <div class="flex flex-col gap-6 md:gap-11 px-6 md:px-28 text-center">
+      <h1 class="font-semibold text-3xl md:text-4xl text-start">About</h1>
+      <p class="text-base md:text-xl w-full md:w-[45rem] text-start text-slate-500">
+        Founded in 2014 by three college friends in Addis Ababa, Minab IT Solutions Plc is a technology solutions provider with teams in Addis Ababa, Hawassa, Mekelle, Adama, Diredawa, Debre Birhan, Bahir Dar, Bulbula, Bure, Yirgalem, and Kombolcha. Minab is a technology consulting and cloud platforms development firm that has worked on several governments and international development organization projects in Ethiopia, Nigeria, Mali, Morocco, Ghana, etc. Our implementation sector includes job matching services, data analysis and reporting tools, enterprise process automation, and property management solutions. We have earned an excellent reputation with our clients by delivering outstanding results as evidenced in their testimonies. We have a testified willingness to take ownership of issue analysis and resolution efforts and commitment to resolving technical issues regardless of effort or time scoped of any engagement..
       </p>
       <div class="self-center md:self-start">
         <button class="text-violet-900">Read more</button>
       </div>
     </div>
 
-    <div class="flex justify-center md:pr-32 mt-10   md:mt-0">
+    <div class="flex justify-center md:pr-56 mt-10   md:mt-0">
       <img
         :src="minab2"
         alt="Minab logo"
@@ -192,114 +203,114 @@ html {
     </div>
   </section>
                   <!-- services -->
-     <section id="services" class="mt-0 flex flex-col bg-slate-200 w-full md:pt-16 pt-20">
+     <section id="services" class="mt-0 flex flex-col bg-[#e5e5e5] w-full md:pt-20 pt-20">
     <h1 class="text-4xl md:text-7xl font-medium text-center">Services</h1>
-    <div class="flex flex-col md:flex-row items-center mx-4 md:mx-36 pt-10 md:pt-44 justify-between gap-10">
+    <div class="flex flex-col md:flex-row items-center mx-4 md:mx-48 pt-10 md:pt-32 justify-between gap-10">
       <div class="flex flex-col w-full md:w-1/3 gap-7 items-center">
-        <img :src="service1" alt="Technology Consultancy" class="bg-violet-900 h-24 w-24 p-4 object-cover rounded-lg">
-        <h1 class="text-indigo-600 text-xl text-center">Technology Consultancy</h1>
-        <p class="text-base md:text-xl text-center">
+        <img :src="service1" alt="Technology Consultancy" class="bg-[#481d5c] h-24 w-24 p-7  object-cover rounded-lg">
+        <h1 class="text-[#481d5c]  text-xl text-center">Technology Consultancy</h1>
+        <p class="text-base md:text-xl text-center justify-center px-12">
           Minab offers technical consultancy services to both local and international organizations in three primary areas, data collection and analysis, process automation, and standard operation procedure designs.
         </p>
         <button class="text-violet-900">Explore more</button>
       </div>
 
       <div class="flex flex-col w-full md:w-1/3 gap-7 items-center">
-        <img :src="service2" alt="Software Development" class="bg-violet-900 h-24 w-24 p-4 object-cover rounded-lg">
-        <h1 class="text-indigo-600 text-xl text-center">Software Development</h1>
-        <p class="text-base md:text-xl text-center">
+        <img :src="service2" alt="Software Development" class="bg-[#481d5c] h-24 w-24 p-7 object-cover rounded-lg">
+        <h1 class="text-[#481d5c] text-xl text-center px-12">Software Development</h1>
+        <p class="text-base md:text-xl text-center px-12 justify-center">
           Minab is a reputable firm in delivering various types of software development services based on both linear as well as dynamic specifications from our clients following all the industry standards and procedures.
         </p>
         <button class="text-violet-900">Explore more</button>
       </div>
 
       <div class="flex flex-col w-full md:w-1/3 gap-7 items-center">
-        <img :src="service3" alt="Outsourcing" class="bg-violet-900 h-24 w-24 p-4 object-cover rounded-lg">
-        <h1 class="text-indigo-600 text-xl text-center">Outsourcing</h1>
-        <p class="text-base md:text-xl text-center">
+        <img :src="service3" alt="Outsourcing" class="bg-[#481d5c] h-24 w-24 p-7 object-cover rounded-lg">
+        <h1 class="text-[#481d5c] text-xl text-center">Outsourcing</h1>
+        <p class="text-base md:text-xl text-center px-12">
           Minab offers developer hours, offshore dedicated developer capacity, and organization IT department outsourcing services to all corporations through our well-experienced team in the sector of operation.
         </p>
         <button class="text-violet-900">Explore more</button>
       </div>
-    </div>
-  </section>
+       </div>
+       </section>
 
                    <!-- teams -->
-       <section id="teams" class="mt-0 bg-slate-200 md:pt-40 pt-28 px-4 md:px-20  w-full flex flex-col md:flex-row gap-8">
-     <div class="flex flex-col gap-10 w-full md:w-1/3">
-      <h1 class="text-4xl md:text-5xl font-bold text-center md:text-left">Meet the Team</h1>
-      <p class="text-lg md:text-xl text-center md:text-left">
+       <section id="teams" class="mt-0 bg-[#e5e5e5] md:pt-36 pt-28 px-4 md:px-20  w-full flex flex-col md:flex-row gap-8">
+     <div class="flex flex-col gap-10 w-full ml-10 md:w-2/3">
+      <h1 class="text-4xl md:text-5xl w-full font-bold text-center md:text-left">Meet the Team</h1>
+      <p class="text-lg md:text-xl text-center mt-5 md:text-left text-slate-600">
         Introducing one of the best software development and technical operation teams in the Ethiopian technology service market. Our team constitutes a diverse set of talent and expertise to tackle our client's challenges and solution needs.
       </p>
     </div>
 
-    <div  class="hidden md:flex flex-col gap-8 w-full md:w-2/3">
-      <div class="flex flex-wrap justify-between gap-4">
-        <div class="bg-gray-400 w-full md:w-[45%] lg:w-[30%] h-80 rounded-xl flex flex-col items-center gap-4 px-10 py-4">
+    <div  class="hidden md:flex  flex-col gap-8 w-full md:w-full">
+      <div class="flex flex-wrap w-full gap-4">
+        <div class="bg-[#dad2de] w-full md:w-[30%]  h-72 rounded-xl flex flex-col items-center gap-4 px-10 py-4">
           <img :src="kal" alt="Kaleab Mezgebu" class="rounded-full w-20 h-20 mt-3">
-          <h1 class="font-bold">KALEAB MEZGEBU</h1>
-          <h2 class="text-sm">Co-Founder and COO</h2>
-          <div class="flex flex-row gap-2">
-            <twitter class="text-slate-800" />
-            <linkedin />
-            <internet />
+          <h1 class="font-bold text-[#481d5c]">KALEAB MEZGEBU</h1>
+          <h2 class="text-sm text-[#481d5c]">Co-Founder and COO</h2>
+          <div class="flex flex-row gap-3 mt-3">
+            <twitter class=" cursor-pointer" />
+            <linkedin class="cursor-pointer"/>
+            <internet class="cursor-pointer"/>
           </div>
         </div>
 
-        <div class="bg-gray-400 w-full md:w-[45%] lg:w-[30%] h-80 rounded-xl flex flex-col items-center gap-4 px-10 py-4">
+        <div class="bg-[#dad2de] w-full md:w-[30%]   h-72 rounded-xl flex flex-col items-center gap-4 px-10 py-4">
           <img :src="mike" alt="Michael Sahlu" class="rounded-full w-20 h-20 mt-3">
-          <h1 class="font-bold">Michael Sahlu</h1>
-          <h2 class="text-sm">Co-Founder and CEO</h2>
-          <div class="flex flex-row gap-2">
-            <twitter class="text-slate-800" />
-            <linkedin />
-            <internet />
+          <h1 class="font-bold text-[#481d5c]">Michael Sahlu</h1>
+          <h2 class="text-sm text-[#481d5c]">Co-Founder and CEO</h2>
+          <div class="flex flex-row gap-3 mt-3">
+          <twitter class=" cursor-pointer" />
+            <linkedin class="cursor-pointer"/>
+            <internet class="cursor-pointer"/>
           </div>
         </div>
 
-        <div class="bg-gray-400 w-full md:w-[45%] lg:w-[30%] h-80 rounded-xl flex flex-col items-center gap-4 px-10 py-4">
+        <div class="bg-[#dad2de] w-full md:w-[30%]  h-72 rounded-xl flex flex-col items-center gap-4 px-10 py-4">
           <img :src="berek" alt="Bereket Abebe" class="rounded-full w-20 h-20 mt-3">
-          <h1 class="font-bold">Bereket Abebe</h1>
-          <h2 class="text-sm">Co-Founder and former CTO</h2>
-          <div class="flex flex-row gap-2">
-            <twitter class="text-slate-800" />
-            <linkedin />
-            <internet />
+          <h1 class="font-bold text-[#481d5c]">Bereket Abebe</h1>
+          <h2 class="text-sm text-[#481d5c]">Co-Founder and former CTO</h2>
+          <div class="flex flex-row gap-3 mt-3">
+            <twitter class=" cursor-pointer" />
+            <linkedin class="cursor-pointer"/>
+            <internet class="cursor-pointer"/>
           </div>
         </div>
       </div>
 
-      <div class="flex flex-wrap justify-between gap-4 mt-8">
-        <div class="bg-gray-400 w-full md:w-[45%] lg:w-[30%] h-80 rounded-xl flex flex-col items-center gap-4 px-10 py-4">
+      <div class="flex flex-wrap w-full   gap-4 mt-4 mr-10">
+        <div class="bg-[#dad2de] w-full md:w-[30%]  h-72 rounded-xl flex flex-col items-center gap-4 px-10 py-4">
           <img :src="nat" alt="Natnael Yared" class="rounded-full w-20 h-20 mt-3">
-          <h1 class="font-bold">Natnael Yared</h1>
-          <h2 class="text-sm">Communication and Marketing Manager</h2>
-          <div class="flex flex-row gap-2">
-            <twitter class="text-slate-800" />
-            <linkedin />
-            <internet />
+          <h1 class="font-bold text-[#481d5c]">Natnael Yared</h1>
+          <h2 class="text-sm text-[#481d5c]">Communication and Marketing Manager</h2>
+          <div class="flex flex-row gap-3 mt-3">
+           <twitter class=" cursor-pointer" />
+            <linkedin class="cursor-pointer"/>
+            <internet class="cursor-pointer"/>
           </div>
         </div>
 
 
-        <div class="bg-gray-400 w-full md:w-[45%] lg:w-[30%] h-80 rounded-xl flex flex-col items-center gap-4 px-10 py-4">
+        <div class="bg-[#dad2de] w-full md:w-[30%]  h-72 rounded-xl flex flex-col items-center gap-4 px-10 py-4">
           <img :src="derj" alt="Dereje Abishu" class="rounded-full w-20 h-20 mt-3">
-          <h1 class="font-bold">Dereje Abishu</h1>
-          <h2 class="text-sm">CFO</h2>
-          <div class="flex flex-row gap-2">
-            <twitter class="text-slate-800" />
-            <linkedin />
-            <internet />
+          <h1 class="font-bold text-[#481d5c]">Dereje Abishu</h1>
+          <h2 class="text-sm text-[#481d5c]">CFO</h2>
+          <div class="flex flex-row gap-3 mt-3">
+           <twitter class=" cursor-pointer" />
+            <linkedin class="cursor-pointer"/>
+            <internet class="cursor-pointer"/>
           </div>
         </div>
 
-        <div class="bg-gray-400 w-full md:w-[45%] lg:w-[30%] h-80 rounded-xl flex flex-col items-center gap-4 px-10 py-4">
+        <div class="bg-[#dad2de] w-full md:w-[30%]  h-72 rounded-xl flex flex-col items-center gap-4 px-10 py-4 ">
           <img :src="muse" alt="Mussie Teshome" class="rounded-full w-20 h-20 mt-3">
-          <h1 class="font-bold">Mussie Teshome</h1>
-          <h2 class="text-sm">Full Stack Developer</h2>
-          <div class="flex flex-row gap-2">
-            <linkedin />
-            <internet />
+          <h1 class="font-bold text-[#481d5c]">Mussie Teshome</h1>
+          <h2 class="text-sm text-[#481d5c]">Full Stack Developer</h2>
+          <div class="flex flex-row gap-3 mt-5">
+            <linkedin class="cursor-pointer"/>
+            <internet class="cursor-pointer"/>
           </div>
         </div>
       </div>
@@ -307,7 +318,7 @@ html {
 
 
 
-      <div class="text-center mt-8">
+      <div class="text-start mt-8 py-6">
         <button class="text-indigo-700 hover:underline">More team members</button>
       </div>
 
@@ -325,9 +336,9 @@ html {
           <h1 class="font-bold">KALEAB MEZGEBU</h1>
           <h2 class="text-sm">Co-Founder and COO</h2>
           <div class="flex flex-row gap-4">
-            <twitter class="text-slate-800" />
-            <linkedin />
-            <internet />
+             <twitter class=" cursor-pointer" />
+            <linkedin class="cursor-pointer"/>
+            <internet class="cursor-pointer"/>
           </div>
         </div>
 <div class="bg-gray-400 w-full md:w-[45%] lg:w-[30%] h-64 rounded-xl flex flex-col items-center gap-1 px-10 py-4">
@@ -335,8 +346,9 @@ html {
           <h1 class="font-bold">Michael Sahlu</h1>
           <h2 class="text-sm">Co-Founder and CEO</h2>
           <div class="flex flex-row gap-2">
-            <twitter class="text-slate-800" />
-            <linkedin />
+             <twitter class=" cursor-pointer" />
+            <linkedin class="cursor-pointer"/>
+            <internet class="cursor-pointer"/>
             <internet />
           </div>
         </div>
@@ -350,9 +362,9 @@ html {
           <h1 class="font-bold">Bereket Abebe</h1>
           <h2 class="text-sm">Co-Founder and former CTO</h2>
           <div class="flex flex-row gap-2">
-            <twitter class="text-slate-800" />
-            <linkedin />
-            <internet />
+             <twitter class=" cursor-pointer" />
+            <linkedin class="cursor-pointer"/>
+            <internet class="cursor-pointer"/>
           </div>
         </div>
         <div class="bg-gray-400 w-full md:w-[45%] lg:w-[30%] h-64 rounded-xl flex flex-col items-center gap-1 px-10 py-4">
@@ -360,9 +372,9 @@ html {
           <h1 class="font-bold">Natnael Yared</h1>
           <h2 class="text-sm">Communication and Marketing Manager</h2>
           <div class="flex flex-row gap-4">
-            <twitter class="text-slate-800" />
-            <linkedin />
-            <internet />
+             <twitter class=" cursor-pointer" />
+            <linkedin class="cursor-pointer"/>
+            <internet class="cursor-pointer"/>
           </div>
         </div>
 
@@ -373,9 +385,9 @@ html {
           <h1 class="font-bold">Dereje Abishu</h1>
           <h2 class="text-sm">CFO</h2>
           <div class="flex flex-row gap-2">
-            <twitter class="text-slate-800" />
-            <linkedin />
-            <internet />
+            <twitter class=" cursor-pointer" />
+            <linkedin class="cursor-pointer"/>
+            <internet class="cursor-pointer"/>
           </div>
         </div>
            <div class="bg-gray-400 w-full md:w-[45%] lg:w-[30%] h-64 rounded-xl flex flex-col items-center gap-1 px-10 py-4">
@@ -383,8 +395,8 @@ html {
           <h1 class="font-bold">Mussie Teshome</h1>
           <h2 class="text-sm">Full Stack Developer</h2>
           <div class="flex flex-row gap-2">
-            <linkedin />
-            <internet />
+             <linkedin class="cursor-pointer"/>
+            <internet class="cursor-pointer"/>
           </div>
         </div>
 
@@ -393,24 +405,23 @@ html {
 
   </section>  
                     <!-- projects -->
-<section id="projects" class="px-4 md:px-20 w-full md:pt-40 pt-32">
+<section id="projects" class="px-4 md:px-20 w-full md:pt-40 pt-32 bg-[#ffffff]">
     <div class="mb-12 justify-start">
       <h1 class="font-bold text-3xl md:text-6xl">Projects</h1>
-      <p class="text-base md:text-xl  mt-4 p-4 rounded-md">
+      <p class=" md:text-lg text-slate-600 mt-4 p-4 rounded-md">
         Below are some of our notable products and projects. We have successfully developed and delivered multiple projects. Among others, below are some of our large-scale engagements and products currently serving our clients and users.
       </p>
     </div>
 
     <div class="flex flex-col gap-10">
-      <div class="flex flex-col md:flex-row bg-slate-200 p-2 md:p-6 rounded-lg shadow-md hover:shadow-lg w-full"   @mouseover="handleMousehover(1)" 
+      <div class="flex flex-col mt-20 md:flex-row bg-[#dad2de]  p-14 mr-10 md:p-6 rounded-lg shadow-md hover:shadow-lg"   @mouseover="handleMousehover(1)" 
         @mouseleave="handleMouseleave">
         <img :src="hahu" alt="Hahu Jobs Image" class="w-full md:w-1/3 h-52 md:h-60 object-cover rounded-lg mb-4 md:mb-0 md:mr-6">
         <div class="flex flex-col justify-between w-full">
           <div class="w-full">
             <h2 class="text-xl md:text-3xl font-bold text-indigo-700">Hahu Jobs</h2>
-            <p class="text-slate-600 mt-4 text-sm md:text-base w-full">
-              HaHuJobs is a cloud service that captures structured data of the Ethiopian labor market through digitally connecting job seekers in major cities. The platform features data-driven job matching for a variety of clients.
-            </p>
+            <p class="text-slate-600 mt-4 text-sm md:text-lg w-full">
+                  HaHuJobs a cloud services operating to capture structured data of the Ethiopian skilled and non-skilled labor market through digitally connecting thousands of job seekers in major Ethiopian cities as well as industrial parks. The platform in a collection of micro services groped to compose web application modules that offer a set of functionalities. HaHuJobs is an electronic product sold as service to a category of clients as per their specific needs in the labor market of Ethiopia. It features various service categories which revolves around data driven job matching of the right candidate with the right             </p>
           </div>
           <div class="flex justify-end mt-4">
              <button v-if="mousehover === 1" class="text-violet-700 py-2 px-4 rounded-lg transition duration-300">
@@ -421,7 +432,7 @@ html {
       </div>
 
       <div @mouseover="handleMousehover(2)" 
-        @mouseleave="handleMouseleave" class="flex flex-col md:flex-row bg-slate-200 p-2 md:p-6 rounded-lg shadow-md hover:shadow-lg w-full">
+        @mouseleave="handleMouseleave" class="flex flex-col mt-20 md:flex-row bg-[#dad2de]  p-14 mr-10 md:p-6 rounded-lg shadow-md hover:shadow-lg ">
         <img :src="minab3" alt="Minab BMS Image" class="w-full md:w-1/3 h-60 object-cover rounded-lg mb-4 md:mb-0 md:mr-6">
         <div class="flex flex-col justify-between w-full">
           <div class="w-full">
@@ -439,7 +450,7 @@ html {
       </div>
 
       <div @mouseover="handleMousehover(3)" 
-        @mouseleave="handleMouseleave" class="flex flex-col md:flex-row bg-slate-200 p-6 rounded-lg shadow-md hover:shadow-lg w-full">
+        @mouseleave="handleMouseleave" class="flex flex-col mt-20 md:flex-row bg-[#dad2de]  p-14 mr-10 md:p-6 rounded-lg shadow-md hover:shadow-lg">
         <img :src="minab4" alt="Minab MEAL Image" class="w-full md:w-1/3 h-60 object-cover rounded-lg mb-4 md:mb-0 md:mr-6">
         <div class="flex flex-col justify-between w-full">
           <div class="w-full">
@@ -465,66 +476,68 @@ html {
   </section>
 
                      <!-- partners -->
-   <section id="partners" class="mt-0 w-full pt-24 bg-slate-200">
+   <section id="partners" class="mt-0 w-full pt-24 bg-[#e5e5e5]">
  <h1 class="font-bold text-center text-4xl md:text-7xl self-center">Partners & Clients</h1>
 
   <div  class="hidden md:flex flex-col">
-    <div class="flex flex-wrap justify-center gap-14 items-center mt-16">
-      <img :src="yesra" alt="no image" class="w-40 h-32 object-contain hover:text-orange-950">
-      <img :src="giz" alt="no image" class="w-40 h-32 object-contain">
-      <img :src="mercy" alt="no image" class="w-40 h-32 object-contain">
-      <img :src="icas" alt="no image" class="w-40 h-32 object-contain">
-      <img :src="world" alt="no image" class="w-40 h-32 object-contain">
-      <img :src="dbc" alt="no image" class="w-40 h-32 object-contain">
-      <img :src="ukai" alt="no image" class="w-40 h-16 object-contain">
+    <div class="flex flex-wrap  gap-14 items-start px-6 mt-16">
+      <img :src="yesra" alt="no image" class="w-24 h-12 object-contain giz">
+      <img :src="giz" alt="no image" class="w-24 h-12 object-contain giz">
+      <img :src="mercy" alt="no image" class="w-24 h-12 object-contain giz">
+      <img :src="icas" alt="no image" class="w-24 h-12 object-contain giz">
+      <img :src="world" alt="no image" class="w-24 h-12 object-contain giz">
+      <img :src="dbc" alt="no image" class="w-24 h-12 object-contain giz">
+      <img :src="first" alt="no image" class="w-24 h-12 object-contain giz">
+
     </div>
 
-    <div class="flex flex-wrap justify-center gap-14 mt-16 items-center">
-      <img :src="oxford" alt="no image" class="w-40 h-32 object-contain">
-      <img :src="eic" alt="no image" class="w-40 h-32 object-contain">
-      <img :src="savechi" alt="no image" class="w-40 h-32 object-contain">
-      <img :src="dain" alt="no image" class="w-40 h-32 object-contain">
-      <img :src="master" alt="no image" class="w-40 h-32 object-contain">
-      <img :src="snv" alt="no image" class="w-40 h-32 object-contain">
+    <div class="flex flex-wrap  gap-14 mt-16 items-center giz">
+      <img :src="oxford" alt="no image" class="w-24 h-12 object-contain giz">
+      <img :src="eic" alt="no image" class="w-24 h-12 object-contain giz">
+      <img :src="savechi" alt="no image" class="w-24 h-12 object-contain giz">
+      <img :src="dain" alt="no image" class="w-24 h-12 object-contain giz">
+      <img :src="master" alt="no image" class="w-24 h-12 object-contain giz">
+      <img :src="snv" alt="no image" class="w-24 h-12 object-contain">
     </div>
 
-    <div class="flex flex-wrap justify-center items-center mt-16 gap-14">
-      <img :src="first" alt="no image" class="w-40 h-32 object-contain">
-      <img :src="usi" alt="no image" class="w-40 h-32 object-contain">
-      <img :src="dfid" alt="no image" class="w-40 h-32 object-contain">
-      <img :src="feder" alt="no image" class="w-40 h-32 object-contain">
-      <img :src="hpr" alt="no image" class="w-40 h-32 object-contain">
-      <img :src="ukai" alt="no image" class="w-40 h-16 object-contain">
-      <img :src="sida" alt="no image" class="w-40 h-32 object-contain">
+    <div class="flex flex-wrap  items-center mt-16 gap-14 giz">
+            <img :src="ukai" alt="no image" class="w-24 h-12 object-contain giz">
+
+      <img :src="usi" alt="no image" class="w-24 h-12 object-contain giz">
+      <img :src="dfid" alt="no image" class="w-24 h-12object-contain giz">
+      <img :src="feder" alt="no image" class="w-24 h-12 object-contain giz">
+      <img :src="hpr" alt="no image" class="w-24 h-12 object-contain giz">
+      <img :src="ukai" alt="no image" class="w-24 h-12 object-contain giz">
+      <img :src="sida" alt="no image" class="w-24 h-12 object-contain giz">
     </div>
   </div>
 
   <div class="md:hidden grid grid-cols-3 gap-x-6 gap-y-8 px-4 mt-5">
-    <img :src="yesra" alt="no image" class="w-20 h-16 object-contain hover:text-orange-950">
-    <img :src="giz" alt="no image" class="w-20 h-16 object-contain">
-    <img :src="mercy" alt="no image" class="w-20 h-16 object-contain">
+    <img :src="yesra" alt="no image" class="w-24 h-12 object-contain giz">
+    <img :src="giz" alt="no image" class="w-24 h-12 object-contain giz">
+    <img :src="mercy" alt="no image" class="w-24 h-12 object-contain giz">
 
-    <img :src="icas" alt="no image" class="w-20 h-16 object-contain">
-    <img :src="world" alt="no image" class="w-20 h-16 object-contain">
-    <img :src="dbc" alt="no image" class="w-20 h-16 object-contain">
+    <img :src="icas" alt="no image" class="w-24 h-12object-contain giz">
+    <img :src="world" alt="no image" class="w-24 h-12 object-contain giz">
+    <img :src="dbc" alt="no image" class="w-24 h-12 object-contain giz">
 
-    <img :src="ukai" alt="no image" class="w-20 h-10 object-contain">
-    <img :src="oxford" alt="no image" class="w-20 h-10 object-contain">
-    <img :src="eic" alt="no image" class="w-20 h-16 object-contain">
+    <img :src="ukai" alt="no image" class="w-24 h-12 object-contain giz">
+    <img :src="oxford" alt="no image" class="w-24 h-12 object-contain giz">
+    <img :src="eic" alt="no image" class="w-24 h-12 object-contain giz">
 
-    <img :src="dain" alt="no image" class="w-20 h-16 object-contain">
-    <img :src="master" alt="no image" class="w-20 h-16 object-contain">
-    <img :src="snv" alt="no image" class="w-20 h-16 object-contain">
+    <img :src="dain" alt="no image" class="w-24 h-12 object-contain giz">
+    <img :src="master" alt="no image" class="w-24 h-12 object-contain giz">
+    <img :src="snv" alt="no image" class="w-24 h-12object-contain giz">
 
-    <img :src="first" alt="no image" class="w-20 h-16 object-contain">
-    <img :src="usi" alt="no image" class="w-20 h-16 object-contain">
-    <img :src="dfid" alt="no image" class="w-20 h-16 object-contain">
+    <img :src="first" alt="no image" class="w-24 h-12 object-contain giz">
+    <img :src="usi" alt="no image" class="w-24 h-12 object-contain giz">
+    <img :src="dfid" alt="no image" class="w-24 h-12 object-contain giz">
 
-    <img :src="hpr" alt="no image" class="w-20 h-16 object-contain">
-    <img :src="ukai" alt="no image" class="w-20 h-8 object-contain">
-    <img :src="sida" alt="no image" class="w-20 h-16 object-contain">
+    <img :src="hpr" alt="no image" class="w-24 h-12 object-contain giz">
+    <img :src="ukai" alt="no image" class="w-24 h-12 object-contain giz">
+    <img :src="sida" alt="no image" class="w-24 h-12 object-contain giz">
 
-    <img :src="sida" alt="no image" class="w-20 h-16 object-contain">
+    <img :src="sida" alt="no image" class="w-24 h-12 object-contain giz">
     <div></div>
     <div></div>
   </div>
@@ -532,8 +545,8 @@ html {
 </section>          
                        <!-- contacts -->
 
-       <section id="contacts" class="mt-0 bg-slate-200 flex flex-col md:flex-row w-full min-h-screen[60rem] items-center pt-20">    
-     <div class="ml-0 md:ml-11 p-10 h-[45rem] w-full md:w-1/2">
+       <section id="contacts" class="mt-0 bg-[#e5e5e5] flex flex-col md:flex-row w-full min-h-screen[60rem] items-center pt-20">    
+     <div class="ml-0 md:ml-20 p-10 h-[45rem] w-full md:w-1/2">
       <h1 class="flex text-5xl">Get</h1>
       <h1 class="flex text-5xl mt-7">in touch.</h1>
       <div class="flex flex-col gap-6">
@@ -560,7 +573,7 @@ html {
           </div>
       </div>
      </div>
-      <div class="md:mr-20 mr-1 bg-white shadow-lg rounded-lg md:h-[45rem] w-full lg:w-[30rem] p-8 pr-16 mt-14 md:mt-10 lg:mt-0">
+      <div class="md:mr-20 mr-1 bg-white shadow-lg rounded-lg md:h-[50rem] w-full md:w-[35rem] p-8 pr-16 mt-14 md:mt-16">
          <form class="flex flex-col space-y-6">
             <h1 class="text-center text-4xl lg:text-6xl text-indigo-900 font-semibold mb-4">Contact Us</h1>
             
