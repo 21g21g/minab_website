@@ -6,6 +6,7 @@ export default defineNuxtConfig({
   modules: ['@nuxtjs/tailwindcss','@vee-validate/nuxt'],
   veeValidate:{
     autoImports:true,
-  }
+  },
+  
 
 })

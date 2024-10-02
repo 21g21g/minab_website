@@ -10,6 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@googlemaps/js-api-loader": "^1.16.8",
     "@vee-validate/nuxt": "^4.13.2",
     "nuxt": "^3.13.0",
     "vue": "latest",
