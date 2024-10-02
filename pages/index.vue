@@ -50,7 +50,7 @@ const handleMousehover = (id) => {
   mousehover.value = id;
 };
 const showToggle=()=>{
-  smallscreens.value=!smallscreens.value
+  smallscreens.value=true
 }
 const handleMouseleave = () => {
   mousehover.value = null;
@@ -61,6 +61,8 @@ const links = ['home', 'about', 'services', 'teams', 'projects', 'partners', 'co
 
 const setActiveLink = (link) => {
   activeLink.value = link;
+  smallscreens.value=false
+
 };
 
   </script>
@@ -82,7 +84,7 @@ html {
         <img :src="minablogos" alt="Logo" class="w-24 h-8 object-fill">
       </div>
 
-      <div v-if="!smallscreens" class="hidden md:flex flex-row gap-10 text-lg items-center text-violet-500">
+      <div  class="hidden md:flex flex-row gap-10 text-lg items-center text-violet-500">
         <a 
             v-for="link in links" 
             :key="link" 
@@ -91,17 +93,22 @@ html {
             :class="{'text-indigo-700 font-bold': activeLink === link}" 
             class="hover:text-gray-700"
           >
-            {{ link.charAt(0).toUpperCase() + link.slice(1) }} <!-- Capitalize first letter -->
+            {{ link.charAt(0).toUpperCase() + link.slice(1) }} 
           </a>
         <window/>
       </div>
 
       <div class="md:hidden gap-x-2 flex flex-row items-center">
           <window/>
-        <button id="mobile-menu-button" class="focus:outline-none" @click="showToggle">
-          <svg class="w-8 h-8 text-violet-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-          </svg>
+        <button id="mobile-menu-button" class="focus:outline-none bg-violet-950 p-2 rounded-lg" @click="showToggle">
+       <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+    class="w-6 h-6" viewBox="0 0 124 124" xml:space="preserve">
+    <g>
+        <path fill="#FFFFFF" d="M112,6H12C5.4,6,0,11.4,0,18s5.4,12,12,12h100c6.6,0,12-5.4,12-12S118.6,6,112,6z"/>
+        <path fill="#FFFFFF" d="M112,50H12C5.4,50,0,55.4,0,62c0,6.6,5.4,12,12,12h100c6.6,0,12-5.4,12-12C124,55.4,118.6,50,112,50z"/>
+        <path fill="#FFFFFF" d="M112,94H12c-6.6,0-12,5.4-12,12s5.4,12,12,12h100c6.6,0,12-5.4,12-12S118.6,94,112,94z"/>
+    </g>
+</svg>
         </button>
         
       </div>
@@ -138,7 +145,7 @@ html {
                  </section>
 
                  <!-- about -->
-                 <section id="about" class="mt-0 flex flex-col md:flex-row w-full h-auto md:h-[50rem] justify-between items-center bg-slate-200 pt-10">
+       <section id="about" class="mt-0 flex flex-col md:flex-row w-full h-auto md:h-[50rem] justify-between items-center bg-slate-200 md:pt-10 pt-20">
     <div class="flex flex-col gap-6 md:gap-11 px-6 md:px-28 md:text-center">
       <h1 class="font-semibold text-3xl md:text-4xl">About</h1>
       <p class="text-base md:text-xl w-full md:w-[45rem] text-slate-500">
@@ -158,7 +165,7 @@ html {
     </div>
   </section>
                   <!-- services -->
-     <section id="services" class="mt-0 flex flex-col bg-slate-200 w-full pt-3">
+     <section id="services" class="mt-0 flex flex-col bg-slate-200 w-full md:pt-16 pt-20">
     <h1 class="text-4xl md:text-7xl font-medium text-center">Services</h1>
     <div class="flex flex-col md:flex-row items-center mx-4 md:mx-36 pt-10 md:pt-44 justify-between gap-10">
       <div class="flex flex-col w-full md:w-1/3 gap-7 items-center">
@@ -191,7 +198,7 @@ html {
   </section>
 
                    <!-- teams -->
-       <section id="teams" class="mt-0 bg-slate-200 pt-40 px-4 md:px-20  w-full flex flex-col md:flex-row gap-8">
+       <section id="teams" class="mt-0 bg-slate-200 md:pt-40 pt-28 px-4 md:px-20  w-full flex flex-col md:flex-row gap-8">
      <div class="flex flex-col gap-10 w-full md:w-1/3">
       <h1 class="text-4xl md:text-5xl font-bold text-center md:text-left">Meet the Team</h1>
       <p class="text-lg md:text-xl text-center md:text-left">
@@ -359,7 +366,7 @@ html {
 
   </section>  
                     <!-- projects -->
-<section id="projects" class="mt-10 px-4 md:px-20 w-full pt-40">
+<section id="projects" class="px-4 md:px-20 w-full md:pt-40 pt-32">
     <div class="mb-12 justify-start">
       <h1 class="font-bold text-3xl md:text-6xl">Projects</h1>
       <p class="text-base md:text-xl  mt-4 p-4 rounded-md">
@@ -498,7 +505,7 @@ html {
 </section>          
                        <!-- contacts -->
 
-             <section id="contacts" class="mt-0 bg-slate-200 flex flex-col md:flex-row w-full min-h-screen[60rem] items-center pt-9">    
+       <section id="contacts" class="mt-0 bg-slate-200 flex flex-col md:flex-row w-full min-h-screen[60rem] items-center pt-20">    
      <div class="ml-0 md:ml-11 p-10 h-[45rem] w-full md:w-1/2">
       <h1 class="flex text-5xl">Get</h1>
       <h1 class="flex text-5xl mt-7">in touch.</h1>
