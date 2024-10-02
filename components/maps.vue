@@ -26,15 +26,15 @@
   // Map options: setting center (latitude, longitude) and initial zoom level
   const mapOptions = {
     center: {
-      lat: 9.03, 
-      lng: 38.74 
+      lat: 9.005401, 
+      lng: 38.763611
     },
     zoom: 12 
   };
   
   // Marker options: setting position and style
   const markerOptions = {
-    position: { lat: 9.03, lng: 38.74 }, // Position for the marker (Addis Ababa)
+    position: { lat: 9.005401, lng: 38.763611 }, // Position for the marker (Addis Ababa)
     icon: {
       url: "http://maps.google.com/mapfiles/ms/icons/red-dot.png" // Red marker icon
     }

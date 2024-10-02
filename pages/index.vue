@@ -44,13 +44,19 @@ import sida  from "../components/assets/images/sida.png"
  import muse from "../components/assets/images/musse.webp";
 import window from "../components/assets/icons/window.vue"
 import maps from "../components/maps.vue"
+import moon from "../components/assets/icons/moon.vue"
+import sun from "../components/assets/icons/sun.vue"
+import cancel from "../components/assets/icons/cancel.vue"
+import threearow from "../components/assets/icons/threearow.vue"
 const smallscreens = ref(false);
+const currentComponent=ref('window')
+
 const mousehover = ref(null);
 const handleMousehover = (id) => {
   mousehover.value = id;
 };
 const showToggle=()=>{
-  smallscreens.value=true
+  smallscreens.value=!smallscreens.value      
 }
 const handleMouseleave = () => {
   mousehover.value = null;
@@ -65,6 +71,27 @@ const setActiveLink = (link) => {
 
 };
 
+const clickWindow=()=>{
+  currentComponent.value='moon'
+}
+const moonClicked=()=>{
+  currentComponent.value='sun'
+  
+}
+const sunClicked=()=>{
+  currentComponent.value='window'
+}
+const navbarColor=computed(()=>{
+   switch(currentComponent.value){
+    case 'window':
+      return "bg-slate-200"
+      case "sun":
+        return "bg-black"
+        default:
+          return "bg-slate-200"
+   }
+
+})
   </script>
             <style >
 #map {
@@ -77,7 +104,7 @@ html {
             <template>
              <div class="flex flex-col w-full mt-0 overflow-x-hidden min-h-screen"> 
           <header>
-   <nav class="w-full bg-slate-200 py-4 items-center fixed top-0 border-b-2 border-gray-400 z-50">
+   <nav   :class="[ navbarColor, 'w-full py-4 items-center fixed top-0 border-b-2 border-gray-400 z-50']">
     <div class="container mx-auto flex flex-row justify-between items-center px-2 md:px-12">
       
       <div class="flex-shrink-0 cursor-pointer" @click="gotoHome">
@@ -95,26 +122,25 @@ html {
           >
             {{ link.charAt(0).toUpperCase() + link.slice(1) }} 
           </a>
-        <window/>
+        <window v-if="currentComponent === 'window'" @click="clickWindow" class="cursor-pointer" />
+       <moon v-if="currentComponent === 'moon'" @click="moonClicked" class="cursor-pointer" />
+       <sun v-if="currentComponent === 'sun'" @click="sunClicked" class="cursor-pointer" />
+      
       </div>
 
       <div class="md:hidden gap-x-2 flex flex-row items-center">
-          <window/>
+       <window v-if="currentComponent === 'window'" @click="clickWindow" class="cursor-pointer" />
+       <moon v-if="currentComponent === 'moon'" @click="moonClicked" class="cursor-pointer" />
+       <sun v-if="currentComponent === 'sun'" @click="sunClicked" class="cursor-pointer" />       
         <button id="mobile-menu-button" class="focus:outline-none bg-violet-950 p-2 rounded-lg" @click="showToggle">
-       <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-    class="w-6 h-6" viewBox="0 0 124 124" xml:space="preserve">
-    <g>
-        <path fill="#FFFFFF" d="M112,6H12C5.4,6,0,11.4,0,18s5.4,12,12,12h100c6.6,0,12-5.4,12-12S118.6,6,112,6z"/>
-        <path fill="#FFFFFF" d="M112,50H12C5.4,50,0,55.4,0,62c0,6.6,5.4,12,12,12h100c6.6,0,12-5.4,12-12C124,55.4,118.6,50,112,50z"/>
-        <path fill="#FFFFFF" d="M112,94H12c-6.6,0-12,5.4-12,12s5.4,12,12,12h100c6.6,0,12-5.4,12-12S118.6,94,112,94z"/>
-    </g>
-</svg>
+           <threearow v-if="!smallscreens"/>
+           <cancel v-if="smallscreens"/>
         </button>
         
       </div>
     </div>
 
-    <div v-if="smallscreens" class="md:hidden bg-slate-200 absolute top-full w-full left-0 flex flex-col gap-4 py-4 px-8 text-lg text-violet-500 border-t border-gray-400">
+    <div v-if="smallscreens" :class="[navbarColor,'md:hidden  absolute top-full w-full left-0 flex flex-col gap-4 py-4 px-8 text-lg text-violet-500 border-t border-gray-400']">
        <a 
           v-for="link in links" 
           :key="link" 
@@ -125,12 +151,13 @@ html {
         >
           {{ link.charAt(0).toUpperCase() + link.slice(1) }}
         </a>
+       
     
     </div>
   </nav>
 </header>
                   <main class="flex-grow"> 
-                    <section id="home" class="flex flex-col  w-full bg-gray-400  h-[60rem] gap-4 md:gap-8">
+                    <section id="home" class="bg-[url('https://res.cloudinary.com/dtlezwrzm/image/upload/v1661000843/minab_back_weuxkp.png')]  flex flex-col  w-full bg-gray-400  h-[60rem] gap-4 md:gap-8 object-contain bg-cover relative">
                          <div class="flex sm:justify-start md:justify-center w-full   md:items-center mt-44">
                         <img :src="minablogos" alt="there is no logos in this feild" class="w-[40-rem] object-cover">
                         </div>
