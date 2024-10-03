@@ -7,6 +7,9 @@ export default defineNuxtConfig({
   veeValidate:{
     autoImports:true,
   },
+  plugins:[{
+    src:"./plugins/leaflet.js",mode:"client"
+  }]
   
 
 })

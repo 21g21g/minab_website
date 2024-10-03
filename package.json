@@ -12,6 +12,7 @@
   "dependencies": {
     "@googlemaps/js-api-loader": "^1.16.8",
     "@vee-validate/nuxt": "^4.13.2",
+    "leaflet": "^1.9.4",
     "nuxt": "^3.13.0",
     "vue": "latest",
     "vue-router": "latest",
