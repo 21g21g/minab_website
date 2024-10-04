@@ -211,9 +211,9 @@ router.push("#home")
         </a>
        
     
-    </div>
-  </nav>
-</header>
+               </div>
+                 </nav>
+                  </header>
                   <main class="flex-grow"> 
                     <section id="home" class="bg-[url('https://res.cloudinary.com/dtlezwrzm/image/upload/v1661000843/minab_back_weuxkp.png')]  flex flex-col  w-full bg-gray-400  h-[60rem] gap-4 md:gap-8 object-contain bg-cover relative pt-10">
                          <div class="flex  justify-center w-full   md:items-center mt-24 md:mt-44">
@@ -293,7 +293,7 @@ router.push("#home")
 
     <div  class="hidden md:flex  flex-col gap-8 w-full md:w-full">
       <div class="flex flex-wrap w-full gap-4">
-        <div :class="[teamCard,'w-full md:w-[30%]  h-72 rounded-xl flex flex-col items-center gap-4 px-10 py-4']">
+        <div :class="[teamCard,'w-full md:w-[30%]  h-72 rounded-xl flex flex-col items-center gap-4 px-10 py-4']"  >
           <img :src="kal" alt="Kaleab Mezgebu" class="rounded-full w-20 h-20 mt-3">
           <h1 :class="[h1Color,'font-bold']">KALEAB MEZGEBU</h1>
           <h2 class="text-sm text-[#8549a1]">Co-Founder and COO</h2>
@@ -371,24 +371,24 @@ router.push("#home")
       </div>
 
          </div>
-     <div class="flex flex-col gap-3 md:hidden">
+     <div class="flex flex-col gap-3 md:hidden w-full mb-3">
         <!-- <div class="flex flex-row w-full gap-4"> -->
          
-         <div :class="[teamCard,'w-full md:w-[45%] lg:w-[30%] h-52 rounded-xl flex flex-col items-center gap-1 px-10 py-4']">
-          <img :src="kal" alt="Kaleab Mezgebu" class="rounded-full w-20 h-20 mt-3">
+         <div :class="[teamCard,'w-[15rem]  h-52 rounded-xl flex flex-col  ml-16 justify-center  gap-1 px-10 py-4']">
+          <img :src="kal" alt="Kaleab Mezgebu" class="rounded-full w-20 ml-10 h-20 mt-3">
          <h1 :class="[h1Color,'text-center text-sm font-bold']">KALEAB MEZGEBU</h1>
           <h2  class="text-sm text-center text-[#8549a1]">Co-Founder and COO</h2>
-          <div class="flex flex-row gap-4">
+          <div class="flex flex-row gap-4 justify-center">
               <twitter class=" cursor-pointer" :currentComponent='currentComponent'/>
             <linkedin class="cursor-pointer" :currentComponent='currentComponent'/>
             <internet :currentComponent='currentComponent' class="cursor-pointer"/>
           </div>
         </div>
-         <div :class="[teamCard,'w-full md:w-[45%]  h-52 rounded-xl flex flex-col items-center gap-1 px-10 py-4']">
-          <img :src="mike" alt="Michael Sahlu" class="rounded-full w-20 h-20 mt-3">
-         <h1 :class="[h1Color,'font-bold']">Michael Sahlu</h1>
-          <h2  class="text-sm text-[#8549a1]">Co-Founder and CEO</h2>
-          <div class="flex flex-row gap-2">
+         <div :class="[teamCard,'w-[15rem]  h-52 rounded-xl flex flex-col  ml-16 justify-center  gap-1 px-10 py-4']">
+          <img :src="mike" alt="Michael Sahlu" class="rounded-full w-20 h-20 ml-10 mt-3">
+         <h1 :class="[h1Color,'font-bold text-center']">Michael Sahlu</h1>
+          <h2  class="text-sm text-[#8549a1] text-center">Co-Founder and CEO</h2>
+          <div class="flex flex-row gap-2 justify-center">
              <twitter class=" cursor-pointer" :currentComponent='currentComponent'/>
             <linkedin class="cursor-pointer" :currentComponent='currentComponent'/>
             <internet :currentComponent='currentComponent' class="cursor-pointer"/>
@@ -398,43 +398,43 @@ router.push("#home")
         
       <!-- </div> -->
 
-         <div :class="[teamCard,'w-full md:w-[45%] lg:w-[30%] h-52 rounded-xl flex flex-col items-center gap-1 px-10 py-4']">
-          <img :src="berek" alt="Bereket Abebe" class="rounded-full w-20 h-20 mt-3">
-          <h1 :class="[h1Color,'font-bold']">Bereket Abebe</h1>
-          <h2  class="text-sm text-[#8549a1]">Co-Founder and former CTO</h2>
-          <div class="flex flex-row gap-2">
+         <div :class="[teamCard,'w-[15rem]  h-52 rounded-xl flex flex-col  ml-16 justify-center  gap-1 px-10 py-4']">
+          <img :src="berek" alt="Bereket Abebe" class="rounded-full ml-10 w-20 h-20 mt-3">
+          <h1 :class="[h1Color,'font-bold text-center']">Bereket Abebe</h1>
+          <h2  class="text-sm text-[#8549a1] text-center">Co-Founder and former CTO</h2>
+          <div class="flex flex-row gap-2 justify-center">
              <twitter class=" cursor-pointer" :currentComponent='currentComponent'/>
             <linkedin class="cursor-pointer" :currentComponent='currentComponent'/>
             <internet :currentComponent='currentComponent' class="cursor-pointer"/>
           </div>
         </div>
         
-         <div :class="[teamCard,'w-full md:w-[45%] lg:w-[30%] h-52 rounded-xl flex flex-col items-center gap-1 px-10 py-4']">
-          <img :src="nat" alt="Natnael Yared" class="rounded-full w-20 h-20 mt-3">
-          <h1 :class="[h1Color,'font-bold']">Natnael Yared</h1>
-          <h2 class="text-xs text-[#8549a1]">Communication and Marketing Manager</h2>
-          <div class="flex flex-row gap-4">
+         <div :class="[teamCard,'w-[15rem]  h-52 rounded-xl flex flex-col  ml-16 justify-center  gap-1 px-10 py-4']">
+          <img :src="nat" alt="Natnael Yared" class="rounded-full ml-10 w-20 h-20 mt-3">
+          <h1 :class="[h1Color,'font-bold text-center']">Natnael Yared</h1>
+          <h2 class="text-xs text-[#8549a1] text-center">Communication and Marketing Manager</h2>
+          <div class="flex flex-row gap-4 justify-center">
               <twitter class=" cursor-pointer" :currentComponent='currentComponent'/>
             <linkedin class="cursor-pointer" :currentComponent='currentComponent'/>
             <internet :currentComponent='currentComponent' class="cursor-pointer"/>
           </div>
         </div>
 
-         <div :class="[teamCard,'w-full md:w-[45%] lg:w-[30%] h-52 rounded-xl flex flex-col items-center gap-1 px-10 py-4']">
-          <img :src="derj" alt="Dereje Abishu" class="rounded-full w-20 h-20 mt-3">
-          <h1 :class="[h1Color,'font-bold']">Dereje Abishu</h1>
-          <h2  class="text-sm text-[#8549a1]">CFO</h2>
-          <div class="flex flex-row gap-2">
+         <div :class="[teamCard,'w-[15rem]  h-52 rounded-xl flex flex-col  ml-16 justify-center  gap-1 px-10 py-4']">
+          <img :src="derj" alt="Dereje Abishu" class="rounded-full ml-10 w-20 h-20 mt-3">
+          <h1 :class="[h1Color,'font-bold text-center']">Dereje Abishu</h1>
+          <h2  class="text-sm text-[#8549a1] text-center">CFO</h2>
+          <div class="flex flex-row gap-2 justify-center">
              <twitter class=" cursor-pointer" :currentComponent='currentComponent'/>
             <linkedin class="cursor-pointer" :currentComponent='currentComponent'/>
             <internet :currentComponent='currentComponent' class="cursor-pointer"/>
           </div>
         </div>
-         <div :class="[teamCard,'w-full md:w-[45%] lg:w-[30%] h-52 rounded-xl flex flex-col items-center gap-1 px-10 py-4']">
-          <img :src="muse" alt="Mussie Teshome" class="rounded-full w-20 h-20 mt-3">
-          <h1 :class="[h1Color,'font-bold']">Mussie Teshome</h1>
-          <h2  class="text-sm text-[#8549a1]">Full Stack Developer</h2>
-          <div class="flex flex-row gap-2">
+         <div :class="[teamCard,'w-[15rem]  h-52 rounded-xl flex flex-col  ml-16 justify-center  gap-1 px-10 py-4']">
+          <img :src="muse" alt="Mussie Teshome" class="rounded-full ml-10 w-20 h-20 mt-3">
+          <h1 :class="[h1Color,'font-bold text-center']">Mussie Teshome</h1>
+          <h2  class="text-sm text-[#8549a1] text-center">Full Stack Developer</h2>
+          <div class="flex flex-row gap-2 justify-center">
             <linkedin class="cursor-pointer" :currentComponent='currentComponent'/>
             <internet :currentComponent='currentComponent' class="cursor-pointer"/>
           </div>
@@ -596,12 +596,12 @@ router.push("#home")
 
       <img :src="giz" alt="no image" class="w-28 h-14 object-contain hover:grayscale-0 dark:hover:invert-0 grayscale dark:invert cursor-pointer duration-200" />
       <img :src="mercy" alt="no image" class="w-28 h-14 object-contain hover:grayscale-0 dark:hover:invert-0 grayscale dark:invert cursor-pointer duration-200" />
-      <img :src="icas" alt="no image" class="w-28 h-14 object-contain hover:grayscale-0 dark:hover:invert-0 grayscale dark:invert cursor-pointer duration-200" />
-     <img :src="yesra" alt="no image" class="w-28 h-14 object-contain hover:grayscale-0 dark:hover:invert-0 grayscale dark:invert cursor-pointer duration-200" />
-     <img :src="world" alt="no image" class="w-28 h-14 object-contain hover:grayscale-0 dark:hover:invert-0 grayscale dark:invert cursor-pointer duration-200" />
-     <img :src="dfid" alt="no image" class="w-28 h-14 object-contain hover:grayscale-0 dark:hover:invert-0 grayscale dark:invert cursor-pointer duration-200" />
-    <img :src="oxford" alt="no image" class="w-28 h-14 object-contain hover:grayscale-0 dark:hover:invert-0 grayscale dark:invert cursor-pointer duration-200" />
-    <img :src="oxford" alt="no image" class="w-28 h-14 object-contain hover:grayscale-0 dark:hover:invert-0 grayscale dark:invert cursor-pointer duration-200" />
+       <img :src="icas" alt="no image" class="w-28 h-14 object-contain hover:grayscale-0 dark:hover:invert-0 grayscale dark:invert cursor-pointer duration-200" />
+      <img :src="yesra" alt="no image" class="w-28 h-14 object-contain hover:grayscale-0 dark:hover:invert-0 grayscale dark:invert cursor-pointer duration-200" />
+      <img :src="world" alt="no image" class="w-28 h-14 object-contain hover:grayscale-0 dark:hover:invert-0 grayscale dark:invert cursor-pointer duration-200" />
+      <img :src="dfid" alt="no image" class="w-28 h-14 object-contain hover:grayscale-0 dark:hover:invert-0 grayscale dark:invert cursor-pointer duration-200" />
+      <img :src="oxford" alt="no image" class="w-28 h-14 object-contain hover:grayscale-0 dark:hover:invert-0 grayscale dark:invert cursor-pointer duration-200" />
+      <img :src="oxford" alt="no image" class="w-28 h-14 object-contain hover:grayscale-0 dark:hover:invert-0 grayscale dark:invert cursor-pointer duration-200" />
       <img :src="eic" alt="no image" class="w-28 h-14 object-contain hover:grayscale-0 dark:hover:invert-0 grayscale dark:invert cursor-pointer duration-200" />
       <img :src="hpr" alt="no image" class="w-28 h-14 object-contain hover:grayscale-0 dark:hover:invert-0 grayscale dark:invert cursor-pointer duration-200" />
       <img :src="dain" alt="no image" class="w-28 h-14 object-contain hover:grayscale-0 dark:hover:invert-0 grayscale dark:invert cursor-pointer duration-200" />
@@ -621,7 +621,7 @@ router.push("#home")
 </section>         
   <!-- contacts -->
 
-       <section id="contacts" :class="{
+         <section id="contacts" :class="{
         'bg-[#20202a]': currentComponent === 'sun',
         'bg-[#e5e5e5]': currentComponent === 'window' || currentComponent === 'moon'
         }" class="mt-0 flex flex-col md:flex-row w-full min-h-screen[60rem] items-center pt-20">    
@@ -660,23 +660,23 @@ router.push("#home")
     'bg-[#2c2c38]': currentComponent === 'sun',
     'bg-white ': currentComponent === 'window' || currentComponent === 'moon'
   }" class="md:mr-20 mr-1 shadow-lg px-3 md:px-10 rounded-lg md:h-[50rem] w-[20rem] md:w-[35rem] p-8 pr-16 mt-20 md:mt-16">
-         <form class="flex flex-col  space-y-6  ">
-            <h1 :class="[h1Color,'text-center text-2xl md:text-4xl    text-indigo-900 font-semibold mb-4']">Contact Us</h1>
+             <form class="flex flex-col  space-y-6  ">
+             <h1 :class="[h1Color,'text-center text-2xl md:text-4xl    text-indigo-900 font-semibold mb-4']">Contact Us</h1>
             
-            <div class="flex flex-col">
+              <div class="flex flex-col">
                <label for="name" :class="[aboutColor,'font-medium mb-2']">Name</label>
                <input type="text" id="name" :class="{
-          'bg-[#20202a]': currentComponent === 'sun',
-         'bg-gray-100': currentComponent === 'window' || currentComponent === 'moon'
-  }"  class=" rounded-md shadow-sm   focus:outline-none focus:ring-2 focus:ring-indigo-500 w-full  md:h-12 h-8 px-4" >
+           'bg-[#20202a]': currentComponent === 'sun',
+          'bg-gray-100': currentComponent === 'window' || currentComponent === 'moon'
+            }"  class=" rounded-md shadow-sm   focus:outline-none focus:ring-2 focus:ring-indigo-500 w-full  md:h-12 h-8 px-4" >
             </div>
             
             <div class="flex flex-col">
                <label for="phone" :class="[aboutColor,'font-medium mb-2']">Phone Number</label>
                <input type="text" id="phone" :class="{
-    'bg-[#20202a]': currentComponent === 'sun',
-    'bg-[#e5e5e5]': currentComponent === 'window' || currentComponent === 'moon'
-  }" class="rounded-md shadow-sm  focus:outline-none focus:ring-2 focus:ring-indigo-500 w-full md:h-12 h-8 px-4" >
+           'bg-[#20202a]': currentComponent === 'sun',
+           'bg-[#e5e5e5]': currentComponent === 'window' || currentComponent === 'moon'
+           }" class="rounded-md shadow-sm  focus:outline-none focus:ring-2 focus:ring-indigo-500 w-full md:h-12 h-8 px-4" >
             </div>
 
             <div class="flex flex-col">
