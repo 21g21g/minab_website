@@ -12,9 +12,9 @@ delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
   iconRetinaUrl,
   iconUrl: 'https://www.minabtech.com/icons/minab.svg',  // Custom icon URL
-  iconSize: [30, 30],  // Icon size (width x height)
-  iconAnchor: [15, 15],  // Center the icon at half the width and height
-  shadowUrl,  // Optional: marker shadow image
+  iconSize: [30, 30],  
+  iconAnchor: [15, 15], 
+  shadowUrl,  
 });
 
 // Define the Nuxt plugin to provide Leaflet globally

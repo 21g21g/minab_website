@@ -1,5 +1,5 @@
 <template>
-  <div id="map" class="h-[15rem] mr-10 md:mr-5 w-[25rem] md:h-[20rem] px-10 md:px-5 md:w-[30rem]"></div>
+  <div id="map" class="h-[18rem] md:mr-5 w-full md:h-[25rem] px-1 md:px-5 md:w-[40rem] z-10"></div>
 </template>
 
 <script setup>
@@ -29,5 +29,6 @@ onMounted(() => {
       .bindTooltip("Minab It Solutions").openTooltip();
 
 });
+
 </script>
 

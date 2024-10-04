@@ -231,9 +231,9 @@ router.push("#home")
 
                  <!-- about -->
        <section id="about" :class="[toogleBackground,'mt-0 min-h-screen flex flex-col md:flex-row w-full h-auto md:h-[50rem] justify-between  md:pt-32 pt-20']">
-    <div class="flex flex-col gap-6 md:gap-11 px-6 md:px-28 text-center">
+    <div class="flex flex-col gap-6 md:gap-11  md:px-28 text-center">
       <h1 :class="[aboutColor,'font-semibold text-3xl md:text-4xl text-start']">About</h1>
-      <p class="md:text-xl w-full md:w-[45rem] text-center text-slate-500 px-12">
+      <p class="md:text-2xl w-full md:w-[45rem] ml-2  text-start  text-slate-500 md:px-12">
         Founded in 2014 by three college friends in Addis Ababa, Minab IT Solutions Plc is a technology solutions provider with teams in Addis Ababa, Hawassa, Mekelle, Adama, Diredawa, Debre Birhan, Bahir Dar, Bulbula, Bure, Yirgalem, and Kombolcha. Minab is a technology consulting and cloud platforms development firm that has worked on several governments and international development organization projects in Ethiopia, Nigeria, Mali, Morocco, Ghana, etc. Our implementation sector includes job matching services, data analysis and reporting tools, enterprise process automation, and property management solutions. We have earned an excellent reputation with our clients by delivering outstanding results as evidenced in their testimonies. We have a testified willingness to take ownership of issue analysis and resolution efforts and commitment to resolving technical issues regardless of effort or time scoped of any engagement..
       </p>
       <div class="self-center md:self-start">
@@ -444,7 +444,7 @@ router.push("#home")
 
   </section>  
                     <!-- projects -->
-<section id="projects" class=" md:px-20 w-full md:pt-40 pt-32 relative"  :class="{'bg-[#2c2c38]':currentComponent==='sun','bg-[#ffffff]':currentComponent==='window'||currentComponent==='moon'}">
+     <section id="projects" class=" md:px-20 w-full md:pt-40 pt-32 relative"  :class="{'bg-[#2c2c38]':currentComponent==='sun','bg-[#ffffff]':currentComponent==='window'||currentComponent==='moon'}">
     <div class="mb-12 ml-4 md:justify-start">
       <h1 :class="[aboutColor,'font-bold text-3xl md:text-6xl']">Projects</h1>
       <p class=" md:text-lg text-[#808080] mt-4 p-4 rounded-md">
@@ -452,57 +452,87 @@ router.push("#home")
       </p>
     </div>
 
-    <div class="flex flex-col gap-10">
-      <div :class="{'bg-[#20202a]':currentComponent==='sun','bg-[#dad2de] ':currentComponent==='window'||currentComponent==='moon'}" class="flex flex-col  mt-5 md:mt-10 md:flex-row px-5 w-full mr-10 md:p-6 rounded-lg shadow-md hover:shadow-lg"   @mouseover="handleMousehover(3)" 
+    <div class="flex flex-col gap-10 px-5">
+      <div :class="{
+        'bg-[#20202a]':currentComponent==='sun',
+        'bg-[#dad2de] ':currentComponent==='window'||currentComponent==='moon',
+          'border-2 border-zinc-950': mousehover === 1 ,
+        }" class="flex flex-col   mt-5 md:mt-10 md:flex-row  px-7    md:mr-10 md:p-6 rounded-lg shadow-md hover:shadow-lg" 
+        @mouseover="handleMousehover(1)" 
         @mouseleave="handleMouseleave">
         <img :src="hahu" alt="Hahu Jobs Image" class="w-full md:w-1/3 h-44 md:h-60 md:pt-10 pt-5 object-cover rounded-lg mb-4 md:mb-0 md:mr-6">
         <div class="flex flex-col justify-between w-full">
           <div class="w-full pt-10">
             <h2  :class="[h1Color,'text-xl pl-3 md:text-3xl font-bold']">Hahu Jobs</h2>
-            <p class="text-slate-600 mt-4 text-sm md:text-lg p-7   w-full">
+            <p class="text-slate-600 mt-4 text-sm md:text-lg md:p-7   w-full">
                   HaHuJobs a cloud services operating to capture structured data of the Ethiopian skilled and non-skilled labor market through digitally connecting thousands of job seekers in major Ethiopian cities as well as industrial parks. The platform in a collection of micro services groped to compose web application modules that offer a set of functionalities. HaHuJobs is an electronic product sold as service to a category of clients as per their specific needs in the labor market of Ethiopia. It features various service categories which revolves around data driven job matching of the right candidate with the right             </p>
           </div>
           <div class="flex justify-end mt-4">
-             <button v-if="mousehover === 1" class="text-violet-700 py-2 px-4 rounded-lg transition duration-300">
-              Explore more
-            </button>
-          </div>
+            <button :class="{'opacity-100': mousehover === 1, 'opacity-0': mousehover !== 1}"
+              class="text-violet-700 py-2 px-4 rounded-lg transition duration-300">
+        Explore more
+      </button>
+    </div>
         </div>
+
       </div>
 
-      <div :class="{'bg-[#20202a]':currentComponent==='sun','bg-[#dad2de] ':currentComponent==='window'||currentComponent==='moon'}" class="flex flex-col  mt-5 md:mt-10 md:flex-row px-5 w-full mr-10 md:p-6 rounded-lg shadow-md hover:shadow-lg"   @mouseover="handleMousehover(3)" 
-        @mouseleave="handleMouseleave">
-        <img :src="minab3" alt="Minab BMS Image" class="w-full pt-10 md:w-1/3 h-40 md:h-60 object-cover rounded-lg mb-4 md:mb-0 md:mr-6">
-        <div class="flex flex-col justify-between w-full">
-          <div class="w-full pt-10">
-            <h2  :class="[h1Color,'text-xl pl-4 md:text-3xl font-bold']">Minab BMS</h2>
-            <p class="text-slate-600 mt-4 text-sm md:text-lg p-7   w-full">
-              Minab BMS is a rental management system designed to simplify building and property management activities. It supports multiple buildings, offering cloud, desktop, and mobile versions, and includes SMS notifications.
-            </p>
-          </div>
-           <div class="flex justify-end mt-4">
-             <button v-if="mousehover === 2" class="text-violet-700 py-2 px-4 rounded-lg transition duration-300">
-              Explore more
-            </button>
-          </div>
-        </div>
-      </div>
+          <div :class="{
+            'bg-[#20202a]':currentComponent==='sun',
+            'bg-[#dad2de] ':currentComponent==='window'||currentComponent==='moon',
+                      'border-2 border-zinc-950': mousehover === 2,
 
-      <div :class="{'bg-[#20202a]':currentComponent==='sun','bg-[#dad2de] ':currentComponent==='window'||currentComponent==='moon'}" class="flex flex-col mt-5 md:mt-10 md:flex-row px-5 w-full mr-10 md:p-6 rounded-lg shadow-md hover:shadow-lg"   @mouseover="handleMousehover(3)" 
+            }" class="flex flex-col  mt-5 md:mt-10 md:flex-row  px-7   md:mr-10 md:p-6 rounded-lg" 
+
+     @mouseover="handleMousehover(2)" 
+     @mouseleave="handleMouseleave">
+  <img :src="minab3" alt="Minab BMS Image"
+       class="w-full pt-10 md:w-1/3 h-40 md:h-60 object-cover rounded-lg mb-4 md:mb-0 md:mr-6">
+  
+  <div class="flex flex-col justify-between w-full">
+    <div class="w-full pt-10">
+      <h2 :class="[h1Color,'text-xl pl-4 md:text-3xl font-bold']">Minab BMS</h2>
+            <p class="text-slate-600 mt-4 text-sm md:text-lg md:p-7   w-full">
+        Minab BMS is a rental management system designed to simplify building and property management activities.
+        It supports multiple buildings, offering cloud, desktop, and mobile versions, and includes SMS notifications.
+                It supports multiple buildings, offering cloud, desktop, and mobile versions, and includes SMS notifications. 
+                        It supports multiple buildings, offering cloud, desktop, and mobile versions, and includes SMS notifications.
+       It supports multiple buildings, offering cloud, desktop, and mobile versions, and includes SMS notifications.
+
+
+      </p>
+    </div>
+    <div class="flex justify-end mt-4">
+      <button :class="{'opacity-100': mousehover === 2, 'opacity-0 ': mousehover !== 2}"
+              class="text-violet-700 py-2 px-4 rounded-lg transition duration-300">
+        Explore more
+      </button>
+    </div>
+  </div>
+</div>
+
+      <div :class="{
+        'bg-[#20202a]':currentComponent==='sun',
+        'bg-[#dad2de] ':currentComponent==='window'||currentComponent==='moon',
+                  'border-2 border-zinc-950': mousehover === 3,
+
+        }" class="flex flex-col mt-5 md:mt-10 md:flex-row px-5 w-full mr-10 md:p-6 rounded-lg  shadow-md hover:shadow-lg"   @mouseover="handleMousehover(3)" 
         @mouseleave="handleMouseleave">
         <img :src="minab4" alt="Minab MEAL Image" class="w-full pt-10 md:w-1/3 h-44 md:h-60 object-cover rounded-lg mb-4 md:mb-0 md:mr-6">
         <div class="flex flex-col justify-between w-full">
           <div class="w-full pt-10">
             <h2 :class="[h1Color,'text-sm md:text-3xl pl-4 font-bold']">Minab Digital Data Management Tool</h2>
-            <p class="text-slate-600 mt-4 text-sm md:text-lg p-7   w-full">
-              Minab MEAL is a digital solution that automates project Monitoring, Evaluation, Accountability, and Learning (MEAL) processes, providing configurable forms and reporting tools for insightful data analysis.
+            <p class="text-slate-600 mt-4 text-sm md:text-lg md:p-7   w-full">
+              Minab MEAL is a digital solution that automates project Monitoring, Evaluation, Accountability, and Learning (MEAL) processes, providing configurable forms and reporting tools for insightful data analysis,
+              providing configurable forms and reporting tools for insightful data analysis.providing configurable forms and reporting tools for insightful data analysis.providing configurable forms and reporting tools for insightful data analysis.providing configurable forms and reporting tools for insightful data analysis.providing configurable forms and reporting tools for insightful data analysis.
             </p>
           </div>
-         <div class="flex justify-end mt-4">
-             <button v-if="mousehover === 3" class="text-violet-700 py-2 px-4 rounded-lg transition duration-300">
-              Explore more
-            </button>
-          </div>
+          <div class="flex justify-end mt-4">
+          <button :class="{'opacity-100': mousehover === 3, 'opacity-0': mousehover !== 3}"
+              class="text-violet-700 py-2 px-4 rounded-lg transition duration-300">
+        Explore more
+      </button>
+    </div>
         </div>
       </div>
 
@@ -592,35 +622,35 @@ router.push("#home")
   <!-- contacts -->
 
        <section id="contacts" :class="{
-    'bg-[#20202a]': currentComponent === 'sun',
-    'bg-[#e5e5e5]': currentComponent === 'window' || currentComponent === 'moon'
+        'bg-[#20202a]': currentComponent === 'sun',
+        'bg-[#e5e5e5]': currentComponent === 'window' || currentComponent === 'moon'
         }" class="mt-0 flex flex-col md:flex-row w-full min-h-screen[60rem] items-center pt-20">    
        <div class="ml-0 md:ml-20 p-5 md:p-10 h-[45rem] w-full md:w-1/2">
        <h1 :class="[aboutColor,'flex text-xl md:text-5xl']">Get</h1>
        <h1 :class="[aboutColor,'flex text-xl md:text-5xl mt-7']">in touch.</h1>
-      <div :class="[aboutColor,'flex flex-col gap-6 mt-10']">
+      <div :class="[aboutColor,'flex flex-col gap-6 mt-10 px-3']">
          <div class="flex flex-row gap-3">
             <phone :currentComponent="currentComponent"/>
-           <p class="text-lg md:text-sm">+251118221001</p>
+           <p class="text-lg md:text-lg">+251118221001</p>
          </div>
            <div class="flex flex-row gap-3">
              <phone :currentComponent="currentComponent"/>
-          <p class="text-lg md:text-sm">+251118221002</p>
+          <p class="text-lg md:text-lg">+251118221002</p>
          </div>
            <div class="flex flex-row gap-3">
              <email :currentComponent="currentComponent"/>
-             <p class="text-lg md:text-sm">info@minabtech.com</p>
+             <p class="text-lg md:text-lg">info@minabtech.com</p>
          </div>
            <div class="flex flex-col md:flex-row gap-3 ">
             <map/>
-             <p class="text-lg md:text-sm">Addis Ababa, Ethiopia</p>
-            <p class="text-lg md:text-sm">Bole, Behind DH-geda Tower, Afomi Building 3rd floor, Addis Ababa</p>
+             <p class="text-lg md:text-lg">Addis Ababa, Ethiopia</p>
+            <p class="text-lg md:text-lg">Bole, Behind DH-geda Tower, Afomi Building 3rd floor, Addis Ababa</p>
 
          </div>
-         <div >
+       
        <leaflet  class="mt-5  border-white border-4"/>
 
-         </div>
+        
 
          
       </div>
@@ -629,8 +659,8 @@ router.push("#home")
       <div  :class="{
     'bg-[#2c2c38]': currentComponent === 'sun',
     'bg-white ': currentComponent === 'window' || currentComponent === 'moon'
-  }" class="md:mr-20 mr-1 shadow-lg px-5 rounded-lg md:h-[50rem] w-[23rem] md:w-[35rem] p-8 pr-16 mt-20 md:mt-16">
-         <form class="flex flex-col space-y-6  ">
+  }" class="md:mr-20 mr-1 shadow-lg px-3 md:px-10 rounded-lg md:h-[50rem] w-[20rem] md:w-[35rem] p-8 pr-16 mt-20 md:mt-16">
+         <form class="flex flex-col  space-y-6  ">
             <h1 :class="[h1Color,'text-center text-2xl md:text-4xl    text-indigo-900 font-semibold mb-4']">Contact Us</h1>
             
             <div class="flex flex-col">
@@ -638,7 +668,7 @@ router.push("#home")
                <input type="text" id="name" :class="{
           'bg-[#20202a]': currentComponent === 'sun',
          'bg-gray-100': currentComponent === 'window' || currentComponent === 'moon'
-  }"  class=" rounded-md shadow-sm   focus:outline-none focus:ring-2 focus:ring-indigo-500 w-full h-12 px-4" >
+  }"  class=" rounded-md shadow-sm   focus:outline-none focus:ring-2 focus:ring-indigo-500 w-full  md:h-12 h-8 px-4" >
             </div>
             
             <div class="flex flex-col">
@@ -646,7 +676,7 @@ router.push("#home")
                <input type="text" id="phone" :class="{
     'bg-[#20202a]': currentComponent === 'sun',
     'bg-[#e5e5e5]': currentComponent === 'window' || currentComponent === 'moon'
-  }" class="rounded-md shadow-sm  focus:outline-none focus:ring-2 focus:ring-indigo-500 w-full h-12 px-4" >
+  }" class="rounded-md shadow-sm  focus:outline-none focus:ring-2 focus:ring-indigo-500 w-full md:h-12 h-8 px-4" >
             </div>
 
             <div class="flex flex-col">
@@ -654,7 +684,7 @@ router.push("#home")
                <input type="email" id="email" :class="{
     'bg-[#20202a]': currentComponent === 'sun',
     'bg-[#e5e5e5]': currentComponent === 'window' || currentComponent === 'moon'
-  }" class=" rounded-md shadow-sm   focus:outline-none focus:ring-2 focus:ring-indigo-500 w-full h-12 px-4">
+  }" class=" rounded-md shadow-sm   focus:outline-none focus:ring-2 focus:ring-indigo-500 w-full  md:h-12 h-8 md:px-4">
             </div>
 
             <div class="flex flex-col">
@@ -665,7 +695,7 @@ router.push("#home")
   }" class=" rounded-md shadow-sm  focus:outline-none focus:ring-2 focus:ring-indigo-500 w-full h-28 px-4 py-2" ></textarea>
             </div>
 
-            <div class="flex justify-end mt-4">
+            <div class="flex justify-center md:justify-end mt-4">
                <button type="submit" class="bg-violet-950 text-white rounded-lg p-3 w-32 hover:bg-indigo-800 transition-all duration-300 shadow-md">Submit</button>
             </div>
          </form>
