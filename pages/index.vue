@@ -215,7 +215,7 @@ router.push("#home")
                  </nav>
                   </header>
                   <main class="flex-grow"> 
-                    <section id="home" class="bg-[url('https://res.cloudinary.com/dtlezwrzm/image/upload/v1661000843/minab_back_weuxkp.png')]  flex flex-col  w-full bg-gray-400  h-[60rem] gap-4 md:gap-8 object-contain bg-cover relative pt-10">
+                    <section id="home" class="bg-[url('https://res.cloudinary.com/dtlezwrzm/image/upload/v1661000843/minab_back_weuxkp.png')]  flex flex-col  w-full bg-gray-400 min-h-screen  md:h-[60rem] gap-4 md:gap-8 object-contain bg-cover relative pt-10">
                          <div class="flex  justify-center w-full   md:items-center mt-24 md:mt-44">
                         <img :src="minablogos" alt="there is no logos in this feild" class="w-[15rem] md:w-[40-rem] object-cover">
                         </div>
@@ -668,7 +668,7 @@ router.push("#home")
                <input type="text" id="name" :class="{
            'bg-[#20202a]': currentComponent === 'sun',
           'bg-gray-100': currentComponent === 'window' || currentComponent === 'moon'
-            }"  class=" rounded-md shadow-sm   focus:outline-none focus:ring-2 focus:ring-indigo-500 w-full  md:h-12 h-8 px-4" >
+            }"  class=" rounded-md shadow-sm   focus:outline-none focus:ring-2 focus:ring-indigo-500 w-[18rem] md:w-full  md:h-12 h-8 px-4" >
             </div>
             
             <div class="flex flex-col">
@@ -676,7 +676,7 @@ router.push("#home")
                <input type="text" id="phone" :class="{
            'bg-[#20202a]': currentComponent === 'sun',
            'bg-[#e5e5e5]': currentComponent === 'window' || currentComponent === 'moon'
-           }" class="rounded-md shadow-sm  focus:outline-none focus:ring-2 focus:ring-indigo-500 w-full md:h-12 h-8 px-4" >
+           }" class="rounded-md shadow-sm  focus:outline-none focus:ring-2 focus:ring-indigo-500 w-[18rem] md:w-full md:h-12 h-8 px-4" >
             </div>
 
             <div class="flex flex-col">
@@ -684,19 +684,19 @@ router.push("#home")
                <input type="email" id="email" :class="{
     'bg-[#20202a]': currentComponent === 'sun',
     'bg-[#e5e5e5]': currentComponent === 'window' || currentComponent === 'moon'
-  }" class=" rounded-md shadow-sm   focus:outline-none focus:ring-2 focus:ring-indigo-500 w-full  md:h-12 h-8 md:px-4">
+  }" class=" rounded-md shadow-sm   focus:outline-none focus:ring-2 focus:ring-indigo-500  w-[18rem] md:w-full  md:h-12 h-8 md:px-4">
             </div>
 
-            <div class="flex flex-col">
+            <div class="flex flex-col w-full">
                <label for="message" :class="[aboutColor,'font-medium mb-2']">Message</label>
-               <textarea id="message" rows="4" :class="{
+               <textarea id="message"  :class="{
     'bg-[#20202a]': currentComponent === 'sun',
     'bg-[#e5e5e5]': currentComponent === 'window' || currentComponent === 'moon'
-  }" class=" rounded-md shadow-sm  focus:outline-none focus:ring-2 focus:ring-indigo-500 w-full h-28 px-4 py-2" ></textarea>
+  }" class=" rounded-md shadow-sm  focus:outline-none focus:ring-2 focus:ring-indigo-500 w-[18rem] md:w-full h-28 px-4 py-2" ></textarea>
             </div>
 
-            <div class="flex justify-center md:justify-end mt-4">
-               <button type="submit" class="bg-violet-950 text-white rounded-lg p-3 w-32 hover:bg-indigo-800 transition-all duration-300 shadow-md">Submit</button>
+            <div class="flex justify-center w-full md:justify-end mt-4">
+               <button type="submit" class="bg-violet-950 text-white rounded-lg py-3 ml-8  w-full md:w-32 hover:bg-indigo-800 transition-all duration-300 shadow-md">Submit</button>
             </div>
          </form>
       </div>
